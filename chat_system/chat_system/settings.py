@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    'echo',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'echo',
 ]
 
 MIDDLEWARE = [
@@ -68,8 +69,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chat_system.wsgi.application'
+# WSGI_APPLICATION = 'chat_system.wsgi.application'
 
+# channels
+ASGI_APPLICATION = 'chat_system.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

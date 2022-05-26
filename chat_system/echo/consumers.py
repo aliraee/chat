@@ -5,5 +5,8 @@ class EchoConsumer(WebsocketConsumer):
         self.accept()
     def disconnect(self,close_code):
         pass
-    def receive(self,text_data):
-        self.send(text_data=text_data+'sent by s3rv3r!!!')
+    def receive(self,text_data=None,bytes_data=None):
+        if text_data:
+            self.send(text_data=text_data+'sent by s3rv3r!!!')
+        if bytes_data:
+            self.send(bytes_data=bytes_data)
